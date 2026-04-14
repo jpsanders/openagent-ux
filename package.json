@@ -1,0 +1,53 @@
+{
+  "name": "openagent-ux",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered frontend builder that creates UNIQUE, premium websites",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/openagent-ux.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:visual": "playwright test --grep @visual",
+    "test:a11y": "playwright test --grep @a11y",
+    "preview": "npm run dev",
+    "analyze": "ANALYZE=true next build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "framer-motion": "^11.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/user-event": "^14.5.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "vitest": "^2.1.0",
+    "@playwright/test": "^1.48.0",
+    "jsdom": "^25.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "14.2.15",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "@axe-core/playwright": "^4.10.0"
+  },
+  "packageManager": "npm@10.0.0"
+}
