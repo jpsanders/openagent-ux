@@ -1,0 +1,191 @@
+# Agent Role Configurations
+# Detailed definitions for each agent role
+
+roles:
+  principal-architect:
+    name: "Principal Architect"
+    tier: 1
+    responsibilities:
+      - "Analyze incoming requests and determine execution strategy"
+      - "Create project requirements and execution plans"
+      - "Delegate tasks to appropriate domain leads"
+      - "Aggregate results from leads and produce final output"
+      - "Maintain project memory and context"
+      - "Handle escalations from leads"
+      
+    skills:
+      - "analysis"
+      - "planning"
+      - "delegation"
+      - "integration"
+      - "code-review"
+      
+    behaviors:
+      always_on: true
+      autonomous: true
+      escalate_on_retry_exhausted: false
+      
+    context:
+      project_root: "."
+      shared_files: "../workspace/files"
+      thread_history: "../workspace/threads"
+      state_file: "../workspace/state/project.json"
+      
+    triggers:
+      - "/build *"
+      - "/design *"
+      - "/deploy *"
+      - "/refactor *"
+      
+    outputs:
+      - "requirements.json"
+      - "execution-plan.yaml"
+      - "final-response"
+
+  design-lead:
+    name: "Design Lead"
+    tier: 2
+    domain: "design"
+    parent: "principal-architect"
+    
+    responsibilities:
+      - "Own the design system and brand identity"
+      - "Manage color palettes, typography, spacing tokens"
+      - "Create layout patterns and UI components"
+      - "Delegate to design specialists as needed"
+      - "Report design decisions to Principal"
+      
+    skills:
+      - "brand-identity"
+      - "design-tokens"
+      - "ui-components"
+      - "animation"
+      - "typography"
+      
+    behaviors:
+      autonomous: true
+      can_spawn_specialists: true
+      max_concurrent_specialists: 3
+      
+    specialist_types:
+      - "brand-specialist"
+      - "token-specialist"
+      - "component-specialist"
+      
+    triggers:
+      - "brand"
+      - "design-system"
+      - "ui"
+      - "typography"
+      - "palette"
+
+  frontend-lead:
+    name: "Frontend Lead"
+    tier: 2
+    domain: "frontend"
+    parent: "principal-architect"
+    
+    responsibilities:
+      - "Build UI components and pages"
+      - "Manage React/Next.js architecture"
+      - "Handle responsive layouts and animations"
+      - "Delegate to frontend specialists"
+      - "Ensure code quality and consistency"
+      
+    skills:
+      - "react"
+      - "nextjs"
+      - "css"
+      - "animations"
+      - "responsive-design"
+      - "performance"
+      
+    behaviors:
+      autonomous: true
+      can_spawn_specialists: true
+      max_concurrent_specialists: 5
+      
+    specialist_types:
+      - "component-specialist"
+      - "page-specialist"
+      - "animation-specialist"
+      - "style-specialist"
+      
+    triggers:
+      - "build"
+      - "component"
+      - "page"
+      - "ui"
+
+  backend-lead:
+    name: "Backend Lead"
+    tier: 2
+    domain: "backend"
+    parent: "principal-architect"
+    
+    responsibilities:
+      - "Design and implement API endpoints"
+      - "Manage database schemas and migrations"
+      - "Handle authentication and authorization"
+      - "Optimize server performance"
+      - "Delegate to backend specialists"
+      
+    skills:
+      - "api-design"
+      - "database"
+      - "authentication"
+      - "server-optimization"
+      - "security"
+      
+    behaviors:
+      autonomous: true
+      can_spawn_specialists: true
+      max_concurrent_specialists: 3
+      
+    specialist_types:
+      - "api-specialist"
+      - "db-specialist"
+      - "auth-specialist"
+      
+    triggers:
+      - "api"
+      - "database"
+      - "auth"
+      - "server"
+
+  qa-lead:
+    name: "QA Lead"
+    tier: 2
+    domain: "qa"
+    parent: "principal-architect"
+    
+    responsibilities:
+      - "Run test suites (unit, e2e, visual)"
+      - "Validate accessibility (a11y)"
+      - "Perform code reviews"
+      - "Check performance metrics"
+      - "Report quality metrics"
+      
+    skills:
+      - "testing"
+      - "accessibility"
+      - "code-review"
+      - "performance-audit"
+      - "security-review"
+      
+    behaviors:
+      autonomous: true
+      can_spawn_specialists: true
+      max_concurrent_specialists: 3
+      
+    specialist_types:
+      - "test-specialist"
+      - "a11y-specialist"
+      - "review-specialist"
+      
+    triggers:
+      - "test"
+      - "review"
+      - "audit"
+      - "a11y"
+      - "quality"

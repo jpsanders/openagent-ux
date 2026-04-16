@@ -1,0 +1,94 @@
+/* Custom Design System - Extensibility Layer */
+
+/* 
+ * Use this file to add custom tokens that override the base design system.
+ * Simply add your custom values below and they will cascade over any personality.
+ * 
+ * Usage: Add data-custom-color="#FF0000" to your root element for color overrides
+ *        Add data-custom-font="Your Custom Font" for typography overrides
+ */
+
+/* Custom Colors - Add your brand colors here */
+[data-custom-color] {
+  --color-primary: var(--custom-primary, currentColor);
+  --color-accent: var(--custom-accent, currentColor);
+}
+
+/* Custom Typography - Add custom fonts here */
+[data-custom-font] {
+  --font-heading: var(--custom-heading, inherit);
+  --font-body: var(--custom-body, inherit);
+  --font-mono: var(--custom-mono, inherit);
+}
+
+/* Custom Spacing - Override spacing scale */
+[data-custom-spacing] {
+  --space-1: var(--custom-space-1, 0.25rem);
+  --space-2: var(--custom-space-2, 0.5rem);
+  --space-4: var(--custom-space-4, 1rem);
+  --space-6: var(--custom-space-6, 1.5rem);
+  --space-8: var(--custom-space-8, 2rem);
+}
+
+/* Custom Radius - Override border radius */
+[data-custom-radius] {
+  --radius-sm: var(--custom-radius-sm, 4px);
+  --radius-md: var(--custom-radius-md, 8px);
+  --radius-lg: var(--custom-radius-lg, 12px);
+}
+
+/* Custom Shadows - Add your own shadow presets */
+[data-custom-shadow] {
+  --shadow-custom-1: var(--custom-shadow-1, none);
+  --shadow-custom-2: var(--custom-shadow-2, none);
+  --shadow-custom-3: var(--custom-shadow-3, none);
+}
+
+/* Custom Transitions */
+[data-custom-motion] {
+  --transition-fast: var(--custom-transition-fast, 150ms);
+  --transition-base: var(--custom-transition-base, 200ms);
+  --transition-slow: var(--custom-transition-slow, 300ms);
+}
+
+/* Example: CSS Custom Properties for inline overrides */
+/*
+:root {
+  --custom-primary: #FF0000;
+  --custom-accent: #00FF00;
+  --custom-heading: 'Your Custom Font', sans-serif;
+  --custom-body: 'Your Custom Font', sans-serif;
+}
+*/
+
+/* Dark Mode Override */
+[data-theme="dark"] {
+  --color-background: #0A0A0A;
+  --color-surface: #151515;
+  --color-foreground: #FFFFFF;
+}
+
+/* Light Mode Override */
+[data-theme="light"] {
+  --color-background: #FFFFFF;
+  --color-surface: #F5F5F5;
+  --color-foreground: #000000;
+}
+
+/* High Contrast Mode */
+[data-contrast="high"] {
+  --color-primary: #000000;
+  --color-foreground: #000000;
+  --color-border: #000000;
+  --color-border-strong: #000000;
+}
+
+/* Reduced Motion - Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+    --transition-slower: 0ms;
+  }
+}

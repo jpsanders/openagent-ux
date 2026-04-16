@@ -1,0 +1,258 @@
+# Pipeline Definitions
+# Predefined workflows for common tasks
+
+pipelines:
+  # ============================================
+  # BUILD PIPELINES
+  # ============================================
+  
+  build-landing:
+    name: "Build Landing Page"
+    description: "Complete landing page with brand, hero, features, CTA, footer"
+    triggers:
+      - "/build landing"
+      - "/build landing-page"
+      - "build landing"
+      
+    steps:
+      - id: "analyze"
+        name: "Analyze Requirements"
+        agent: "principal"
+        action: "analyze"
+        input: "User request for landing page"
+        output: "requirements.json"
+        
+      - id: "brand"
+        name: "Create Brand Identity"
+        agent: "design-lead"
+        depends_on: ["analyze"]
+        action: "create-brand"
+        input: "requirements.industry, requirements.mood"
+        output: "brand-identity.json"
+        
+      - id: "hero"
+        name: "Build Hero Section"
+        agent: "frontend-lead"
+        depends_on: ["brand"]
+        parallel: true
+        action: "build-hero"
+        output: "hero-component.tsx"
+        
+      - id: "features"
+        name: "Build Features Section"
+        agent: "frontend-lead"
+        depends_on: ["brand"]
+        parallel: true
+        action: "build-features"
+        output: "features-section.tsx"
+        
+      - id: "cta"
+        name: "Build CTA Section"
+        agent: "frontend-lead"
+        depends_on: ["brand"]
+        parallel: true
+        action: "build-cta"
+        output: "cta-section.tsx"
+        
+      - id: "footer"
+        name: "Build Footer"
+        agent: "frontend-lead"
+        depends_on: ["brand"]
+        parallel: true
+        action: "build-footer"
+        output: "footer-section.tsx"
+        
+      - id: "assemble"
+        name: "Assemble Landing Page"
+        agent: "frontend-lead"
+        depends_on: ["hero", "features", "cta", "footer"]
+        action: "assemble-page"
+        output: "app/page.tsx"
+        
+      - id: "test"
+        name: "Quality Review"
+        agent: "qa-lead"
+        depends_on: ["assemble"]
+        action: "test-and-review"
+        
+      - id: "finalize"
+        name: "Finalize"
+        agent: "principal"
+        depends_on: ["test"]
+        action: "finalize"
+        
+    completion:
+      success_message: "Landing page complete! Components created with {brand} design system."
+      files_created:
+        - "app/page.tsx"
+        - "app/components/hero.tsx"
+        - "app/components/features.tsx"
+        - "app/components/cta.tsx"
+        - "app/components/footer.tsx"
+        - "config/brand-identity.json"
+
+  build-fullstack:
+    name: "Build Full Stack App"
+    description: "Complete fullstack application with frontend, backend, and database"
+    triggers:
+      - "/build fullstack"
+      - "/build app"
+      
+    steps:
+      - id: "analyze"
+        name: "Analyze Requirements"
+        agent: "principal"
+        action: "analyze"
+        output: "requirements.json"
+        
+      - id: "design"
+        name: "Design System"
+        agent: "design-lead"
+        depends_on: ["analyze"]
+        action: "create-brand"
+        output: "brand-identity.json"
+        
+      - id: "frontend"
+        name: "Build Frontend"
+        agent: "frontend-lead"
+        depends_on: ["design"]
+        action: "build-frontend"
+        
+      - id: "backend"
+        name: "Build Backend"
+        agent: "backend-lead"
+        depends_on: ["analyze"]
+        action: "build-backend"
+        
+      - id: "test"
+        name: "Test & Review"
+        agent: "qa-lead"
+        depends_on: ["frontend", "backend"]
+        action: "test-and-review"
+        
+      - id: "finalize"
+        name: "Finalize"
+        agent: "principal"
+        depends_on: ["test"]
+        action: "finalize"
+
+  build-component:
+    name: "Build Component"
+    description: "Build a single UI component"
+    triggers:
+      - "/build component"
+      - "/component"
+      
+    steps:
+      - id: "create"
+        name: "Create Component"
+        agent: "frontend-lead"
+        action: "build-component"
+        
+      - id: "test"
+        name: "Test Component"
+        agent: "qa-lead"
+        depends_on: ["create"]
+        action: "test-component"
+        
+      - id: "finalize"
+        name: "Finalize"
+        agent: "frontend-lead"
+        depends_on: ["test"]
+        action: "finalize"
+
+  # ============================================
+  # REVIEW PIPELINES
+  # ============================================
+  
+  review-refactor:
+    name: "Review and Refactor"
+    description: "Code review with optional refactoring"
+    triggers:
+      - "/review"
+      - "/refactor"
+      - "review code"
+      
+    steps:
+      - id: "review"
+        name: "Code Review"
+        agent: "qa-lead"
+        action: "code-review"
+        
+      - id: "refactor"
+        name: "Refactor if Needed"
+        agent: "qa-lead"
+        depends_on: ["review"]
+        conditional: "if issues found"
+        action: "refactor"
+
+  # ============================================
+  # TEST PIPELINES
+  # ============================================
+  
+  run-tests:
+    name: "Run Test Suite"
+    description: "Run all tests (unit, e2e, visual, a11y)"
+    triggers:
+      - "/test"
+      - "/test all"
+      - "run tests"
+      
+    steps:
+      - id: "unit"
+        name: "Unit Tests"
+        agent: "qa-lead"
+        action: "run-unit-tests"
+        
+      - id: "e2e"
+        name: "E2E Tests"
+        agent: "qa-lead"
+        depends_on: ["unit"]
+        action: "run-e2e-tests"
+        
+      - id: "a11y"
+        name: "Accessibility Audit"
+        agent: "qa-lead"
+        depends_on: ["unit"]
+        action: "run-a11y-audit"
+        
+      - id: "report"
+        name: "Generate Report"
+        agent: "qa-lead"
+        depends_on: ["unit", "e2e", "a11y"]
+        action: "generate-report"
+
+  # ============================================
+  # DEPLOY PIPELINES
+  # ============================================
+  
+  deploy:
+    name: "Deploy Application"
+    description: "Build and deploy to production"
+    triggers:
+      - "/deploy"
+      - "deploy"
+      
+    steps:
+      - id: "build"
+        name: "Build Application"
+        agent: "frontend-lead"
+        action: "build-production"
+        
+      - id: "test"
+        name: "Pre-deploy Tests"
+        agent: "qa-lead"
+        depends_on: ["build"]
+        action: "run-tests"
+        
+      - id: "deploy"
+        name: "Deploy"
+        agent: "backend-lead"
+        depends_on: ["test"]
+        action: "deploy"
+        
+      - id: "verify"
+        name: "Verify Deployment"
+        agent: "qa-lead"
+        depends_on: ["deploy"]
+        action: "verify-deployment"

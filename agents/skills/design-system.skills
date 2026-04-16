@@ -1,0 +1,148 @@
+# Design System Skills
+
+## Overview
+This skill package provides design token generation, component scaffolding, and motion primitives for building consistent, intentional interfaces.
+
+## Included Skills
+
+### 1. Semantic Color System
+Generate colors by purpose, not by shade.
+
+```
+Purpose-based → background, surface, brand, success, warning, error
+Shade-based   → 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+Example:
+- semantic: brand-DEFAULT, brand-emphasis, brand-muted
+- raw: blue-500 (BAD - what does "blue" mean here?)
+```
+
+**Usage**: Generate tokens with `generate-semantic-colors(brand-hue)`
+
+### 2. Type Scale Generator
+Create intentional hierarchy with computed sizes.
+
+| Level | Scale Ratio | Base 16px |
+|-------|-------------|-----------|
+| display | 3 | 48px |
+| heading-1 | 2.25 | 36px |
+| heading-2 | 1.75 | 28px |
+| heading-3 | 1.375 | 22px |
+| body | 1 | 16px |
+| small | 0.875 | 14px |
+| tiny | 0.75 | 12px |
+
+**Usage**: Generate scale with `generate-type-scale(base-size)`
+
+### 3. Spacing Grid
+4px base unit system.
+
+| Token | Multiplier | Pixels |
+|-------|------------|--------|
+| space-0 | 0 | 0 |
+| space-1 | 1 | 4px |
+| space-2 | 2 | 8px |
+| space-3 | 3 | 12px |
+| space-4 | 4 | 16px |
+| space-5 | 5 | 20px |
+| space-6 | 6 | 24px |
+| space-8 | 8 | 32px |
+| space-10 | 10 | 40px |
+| space-12 | 12 | 48px |
+| space-16 | 16 | 64px |
+
+**Usage**: Use Tailwind spacing or CSS variables
+
+### 4. Component State Generator
+Generate all interactive states for components.
+
+```
+States required for every interactive component:
+- default    → resting state
+- hover      → mouse over
+- active     → mouse down / pressed
+- focus      → keyboard focus (visible!)
+- disabled   → non-interactive
+- loading    → async processing
+- error      → validation/error state
+```
+
+**Usage**: Template generates complete component with all states
+
+### 5. Motion Primitives
+Purposeful animation patterns.
+
+| Pattern | Easing | Duration | Use Case |
+|---------|--------|----------|----------|
+| enter | ease-out | 200-300ms | Elements appearing |
+| exit | ease-in | 150-200ms | Elements leaving |
+| interaction | ease-out-expo | 150ms | Button press, toggle |
+| layout | spring | 300ms | Size/position changes |
+
+**Easing Curves**:
+```css
+--ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+--ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+--ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+--ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+```
+
+## Output Files
+
+### tokens.json
+```json
+{
+  "colors": {
+    "background": { "DEFAULT": "#...", "subtle": "#..." },
+    "surface": { "DEFAULT": "#...", "elevated": "#..." },
+    "brand": { "DEFAULT": "#...", "muted": "#..." },
+    "success": { "DEFAULT": "#...", "muted": "#..." },
+    "warning": { "DEFAULT": "#...", "muted": "#..." },
+    "error": { "DEFAULT": "#...", "muted": "#..." }
+  },
+  "typography": {
+    "display": { "size": "3rem", "weight": "700", "lineHeight": "1.1" },
+    "heading-1": { "size": "2.25rem", "weight": "700", "lineHeight": "1.2" }
+  },
+  "spacing": {
+    "1": "4px", "2": "8px", "4": "16px"
+  }
+}
+```
+
+### CSS Variables Output
+```css
+:root {
+  /* Colors */
+  --color-background: #...;
+  --color-background-subtle: #...;
+  --color-surface: #...;
+  --color-brand: #...;
+  --color-success: #...;
+  --color-warning: #...;
+  --color-error: #...;
+  
+  /* Typography */
+  --font-size-display: 3rem;
+  --font-weight-display: 700;
+  --line-height-display: 1.1;
+  
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+```
+
+## Workflow
+
+1. **Define brand hue** → Generate semantic colors
+2. **Set base size** → Generate type scale
+3. **Apply tokens** → CSS variables + Tailwind config
+4. **Build components** → Use token references
+5. **Add motion** → Use primitive values

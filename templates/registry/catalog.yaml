@@ -1,0 +1,706 @@
+# OpenAgent UX - Template Registry
+# A collection of 50+ website templates across multiple frameworks
+
+templates:
+  # ==========================================
+  # ASTRO TEMPLATES (12)
+  # ==========================================
+  
+  - id: "astrowind"
+    name: "AstroWind"
+    framework: "astro"
+    category: ["saas", "marketing", "landing"]
+    description: "Production-ready SaaS/marketing template with blog support"
+    stars: 5500
+    license: "MIT"
+    demo_url: "https://astrowind.vercel.app"
+    features:
+      - "Tailwind CSS"
+      - "Blog with MDX"
+      - "SEO optimized"
+      - "Dark mode"
+    sections:
+      - "Hero"
+      - "Features"
+      - "Pricing"
+      - "Testimonials"
+      - "FAQ"
+      - "Blog"
+      - "Contact"
+
+  - id: "astroship"
+    name: "Astroship"
+    framework: "astro"
+    category: ["saas", "startup", "landing"]
+    description: "Startup marketing website template with essential sections"
+    stars: 1900
+    license: "GPL-3.0"
+    demo_url: "https://astroship.netlify.app"
+    features:
+      - "Tailwind CSS"
+      - "Blog ready"
+      - "SEO optimized"
+      - "Fast performance"
+
+  - id: "astro-paper"
+    name: "AstroPaper"
+    framework: "astro"
+    category: ["blog", "portfolio"]
+    description: "Minimal, SEO-friendly blog theme with typography focus"
+    stars: 4200
+    license: "MIT"
+    demo_url: "https://astro-paper.vercel.app"
+    features:
+      - "Type-safe markdown"
+      - "Fuzzy search"
+      - "Draft posts"
+      - "RSS feed"
+
+  - id: "blogsmith-free"
+    name: "Blogsmith Free"
+    framework: "astro"
+    category: ["blog"]
+    description: "Feature-rich blog with MDX and categories"
+    stars: 350
+    license: "GPL-3.0"
+    demo_url: "https://blogsmithfree.cosmicthemes.com"
+    features:
+      - "MDX components"
+      - "View transitions"
+      - "Categories"
+      - "SEO tags"
+
+  - id: "astrofy"
+    name: "Astrofy"
+    framework: "astro"
+    category: ["portfolio", "personal"]
+    description: "Portfolio template for personal websites"
+    stars: 1300
+    license: "MIT"
+    demo_url: "https://astrofy.netlify.app"
+    features:
+      - "Portfolio grid"
+      - "Blog"
+      - "Dark mode"
+
+  - id: "flowbite-admin"
+    name: "Flowbite Admin"
+    framework: "astro"
+    category: ["dashboard", "admin"]
+    description: "Admin dashboard template with sidebar"
+    stars: 800
+    license: "MIT"
+    demo_url: "https://flowbite-admin.vercel.app"
+    features:
+      - "Collapsible sidebar"
+      - "Tables"
+      - "Widgets"
+      - "Dark mode"
+
+  - id: "starlight-docs"
+    name: "Starlight"
+    framework: "astro"
+    category: ["documentation"]
+    description: "Documentation template with accessible navigation"
+    stars: 2500
+    license: "MIT"
+    demo_url: "https://starlight.astro.build"
+    features:
+      - "Sidebar navigation"
+      - "Table of contents"
+      - "Search (Pagefind)"
+      - "i18n ready"
+
+  - id: "astro-ecommerce"
+    name: "Astro Ecommerce"
+    framework: "astro"
+    category: ["ecommerce"]
+    description: "E-commerce template for online stores"
+    stars: 460
+    license: "MIT"
+    demo_url: "https://astro-ecommerce.netlify.app"
+    features:
+      - "Product catalog"
+      - "Cart"
+      - "Checkout flow"
+
+  - id: "astro-cactus"
+    name: "Astro Cactus"
+    framework: "astro"
+    category: ["blog", "docs"]
+    description: "Simple blog with Pagefind search"
+    stars: 1500
+    license: "MIT"
+    demo_url: "https://astro-cactus.netlify.app"
+    features:
+      - "Markdown"
+      - "RSS"
+      - "Search"
+
+  - id: "astro-micro"
+    name: "Astro Micro"
+    framework: "astro"
+    category: ["blog"]
+    description: "Lightweight blog without JavaScript"
+    stars: 470
+    license: "MIT"
+    demo_url: "https://astro-micro.netlify.app"
+    features:
+      - "Zero JS"
+      - "Pagefind"
+      - "RSS"
+      - "Multiple themes"
+
+  - id: "accessible-astro"
+    name: "Accessible Astro Starter"
+    framework: "astro"
+    category: ["blog", "marketing"]
+    description: "SEO and accessibility focused starter"
+    stars: 1100
+    license: "MIT"
+    demo_url: "https://accessible-astro-starter.netlify.app"
+    features:
+      - "WCAG accessible"
+      - "SEO friendly"
+      - "Fast"
+
+  - id: "astro-boilerplate"
+    name: "Astro Boilerplate"
+    framework: "astro"
+    category: ["boilerplate", "portfolio"]
+    description: "Responsive portfolio and blog starter"
+    stars: 580
+    license: "MIT"
+    demo_url: "https://astro-boilerplate.netlify.app"
+    features:
+      - "Tailwind 3.0"
+      - "Blog ready"
+      - "Portfolio"
+
+  # ==========================================
+  # GATSBY TEMPLATES (10)
+  # ==========================================
+
+  - id: "gatsby-starter-blog"
+    name: "Gatsby Starter Blog"
+    framework: "gatsby"
+    category: ["blog"]
+    description: "Official Gatsby blog starter"
+    stars: 3500
+    license: "MIT"
+    demo_url: "https://gatsby-starter-blog.netlify.app"
+    features:
+      - "Markdown posts"
+      - "Code highlighting"
+      - "RSS feed"
+      - "SEO"
+
+  - id: "gatsby-portfolio-cara"
+    name: "Portfolio Cara"
+    framework: "gatsby"
+    category: ["portfolio"]
+    description: "Colorful one-page portfolio with parallax"
+    stars: 1400
+    license: "MIT"
+    demo_url: "https://gatsby-portfolio-cara.netlify.app"
+    features:
+      - "Parallax effects"
+      - "Animations"
+      - "Contact form"
+
+  - id: "gatsby-minimal-blog"
+    name: "Minimal Blog"
+    framework: "gatsby"
+    category: ["blog"]
+    description: "Typography-driven minimal blog"
+    stars: 1100
+    license: "MIT"
+    demo_url: "https://gatsby-minimal-blog.netlify.app"
+    features:
+      - "Dark mode"
+      - "Tags/categories"
+      - "RSS"
+
+  - id: "gatsby-advanced-starter"
+    name: "Gatsby Advanced Starter"
+    framework: "gatsby"
+    category: ["boilerplate", "blog"]
+    description: "Minimal base for advanced websites"
+    stars: 1500
+    license: "MIT"
+    demo_url: "https://gatsby-advanced-starter.netlify.app"
+    features:
+      - "TypeScript"
+      - "SEO"
+      - "PWA"
+      - "i18n"
+
+  - id: "gatsby-starter-shopify"
+    name: "Gatsby Shopify Starter"
+    framework: "gatsby"
+    category: ["ecommerce"]
+    description: "E-commerce starter with Shopify"
+    stars: 300
+    license: "MIT"
+    demo_url: "https://gatsby-starter-shopify.netlify.app"
+    features:
+      - "Shopify integration"
+      - "Product pages"
+      - "Cart"
+
+  - id: "gatsby-decap-cms"
+    name: "Decap CMS Starter"
+    framework: "gatsby"
+    category: ["blog", "content"]
+    description: "Blog with Decap CMS for content"
+    stars: 2000
+    license: "MIT"
+    demo_url: "https://gatsby-decap-cms.netlify.app"
+    features:
+      - "Decap CMS"
+      - "Markdown"
+      - "Netlify ready"
+
+  - id: "gatsby-gitbook-starter"
+    name: "Gitbook Style"
+    framework: "gatsby"
+    category: ["documentation"]
+    description: "Documentation in Gitbook style"
+    stars: 990
+    license: "MIT"
+    demo_url: "https://gatsby-gitbook.netlify.app"
+    features:
+      - "MDX docs"
+      - "Sidebar"
+      - "Search"
+
+  - id: "gatsby-starter-ghost"
+    name: "Ghost Starter"
+    framework: "gatsby"
+    category: ["blog"]
+    description: "Blog starter with Ghost CMS"
+    stars: 1100
+    license: "MIT"
+    demo_url: "https://gatsby-starter-ghost.netlify.app"
+    features:
+      - "Ghost integration"
+      - "RSS"
+      - "SEO"
+
+  - id: "gatsby-universal"
+    name: "Gatsby Universal"
+    framework: "gatsby"
+    category: ["marketing", "saas"]
+    description: "Opinionated marketing site starter"
+    stars: 600
+    license: "MIT"
+    demo_url: "https://gatsby-universal.netlify.app"
+    features:
+      - "SEO"
+      - "Offline support"
+      - "Open Graph"
+
+  - id: "gatsby-starter-wordpress"
+    name: "WordPress Starter"
+    framework: "gatsby"
+    category: ["blog"]
+    description: "WordPress headless blog starter"
+    stars: 200
+    license: "MIT"
+    demo_url: "https://gatsby-starter-wordpress.netlify.app"
+    features:
+      - "WP GraphQL"
+      - "Images"
+      - "Preview"
+
+  # ==========================================
+  # NEXT.JS TEMPLATES (10)
+  # ==========================================
+
+  - id: "nextjs-blog-starter"
+    name: "Next.js Blog Starter"
+    framework: "nextjs"
+    category: ["blog"]
+    description: "Official Next.js blog with App Router"
+    demo_url: "https://nextjs.org"
+    features:
+      - "App Router"
+      - "MDX"
+      - "TypeScript"
+
+  - id: "nextjs-commerce"
+    name: "Next.js Commerce"
+    framework: "nextjs"
+    category: ["ecommerce"]
+    description: "E-commerce starter with shop features"
+    stars: 2500
+    license: "MIT"
+    demo_url: "https://nextjs.org/commerce"
+    features:
+      - "Product catalog"
+      - "Cart"
+      - "Checkout"
+      - "CMS integration"
+
+  - id: "nextjs-dashboard"
+    name: "Dashboard Template"
+    framework: "nextjs"
+    category: ["dashboard", "admin"]
+    description: "Admin dashboard with charts and tables"
+    features:
+      - "Sidebar"
+      - "Data tables"
+      - "Charts"
+
+  - id: "nextjs-saas-starter"
+    name: "SaaS Starter"
+    framework: "nextjs"
+    category: ["saas", "landing"]
+    description: "SaaS landing page starter"
+    features:
+      - "Pricing"
+      - "Features"
+      - "CTA sections"
+
+  - id: "nextjs-portfolio"
+    name: "Portfolio"
+    framework: "nextjs"
+    category: ["portfolio"]
+    description: "Personal portfolio template"
+    features:
+      - "Project gallery"
+      - "About page"
+      - "Contact"
+
+  - id: "nextjs-docs-starter"
+    name: "Documentation"
+    framework: "nextjs"
+    category: ["documentation"]
+    description: "Docs template with sidebar"
+    features:
+      - "Sidebar nav"
+      - "MDX"
+      - "Search"
+
+  - id: "create-t3-app"
+    name: "T3 Stack"
+    framework: "nextjs"
+    category: ["boilerplate", "saas"]
+    description: "Full-stack SaaS starter with tRPC"
+    stars: 1800
+    license: "MIT"
+    demo_url: "https://create-t3-app.com"
+    features:
+      - "tRPC"
+      - "Prisma"
+      - "NextAuth"
+      - "TypeScript"
+
+  - id: "nextjs-landing"
+    name: "Landing Page"
+    framework: "nextjs"
+    category: ["landing", "marketing"]
+    description: "Marketing landing page"
+    features:
+      - "Hero"
+      - "Features"
+      - "CTA"
+
+  - id: "nextjs-ecommerce-store"
+    name: "E-commerce Store"
+    framework: "nextjs"
+    category: ["ecommerce"]
+    description: "Full e-commerce store"
+    features:
+      - "Product grid"
+      - "Cart"
+      - "Checkout"
+
+  - id: "nextjs-multilingual"
+    name: "i18n Starter"
+    framework: "nextjs"
+    category: ["marketing", "saas"]
+    description: "Multi-language marketing site"
+    features:
+      - "i18n routing"
+      - "Language switcher"
+
+  # ==========================================
+  # NUXT TEMPLATES (8)
+  # ==========================================
+
+  - id: "nuxt-documentation"
+    name: "Nuxt Docs"
+    framework: "nuxt"
+    category: ["documentation"]
+    description: "Documentation template"
+    demo_url: "https://nuxt.com"
+    features:
+      - "Content module"
+      - "Sidebar"
+      - "Search"
+
+  - id: "nuxt-blog-starter"
+    name: "Nuxt Blog"
+    framework: "nuxt"
+    category: ["blog"]
+    description: "Blog with @nuxt/content"
+    features:
+      - "Markdown"
+      - "SEO"
+      - "Dark mode"
+
+  - id: "nuxt-commerce"
+    name: "Nuxt Commerce"
+    framework: "nuxt"
+    category: ["ecommerce"]
+    description: "E-commerce template"
+    features:
+      - "Product catalog"
+      - "Cart"
+      - "Checkout"
+
+  - id: "nuxt-portfolio"
+    name: "Portfolio"
+    framework: "nuxt"
+    category: ["portfolio"]
+    description: "Personal portfolio"
+    features:
+      - "Gallery"
+      - "About"
+      - "Contact"
+
+  - id: "nuxt-saas"
+    name: "SaaS Landing"
+    framework: "nuxt"
+    category: ["saas", "landing"]
+    description: "SaaS marketing template"
+    features:
+      - "Hero"
+      - "Features"
+      - "Pricing"
+
+  - id: "nuxt-starter-kit"
+    name: "Nuxt Starter"
+    framework: "nuxt"
+    category: ["boilerplate"]
+    description: "Official Nuxt starter"
+    demo_url: "https://nuxt.new"
+    features:
+      - "App.vue"
+      - "pages/"
+      - "components/"
+
+  - id: "nuxt-content-template"
+    name: "Content Blog"
+    framework: "nuxt"
+    category: ["blog", "docs"]
+    description: "Content-powered blog"
+    features:
+      - "Nuxt Content"
+      - "MDC"
+      - "Search"
+
+  - id: "nuxt-layer-starter"
+    name: "Nuxt Layer"
+    framework: "nuxt"
+    category: ["boilerplate"]
+    description: "Nuxt layer starter"
+    features:
+      - "Nuxt layers"
+      - "Module ready"
+
+  # ==========================================
+  # HUGO TEMPLATES (5)
+  # ==========================================
+
+  - id: "hugo-paper"
+    name: "Hugo Paper"
+    framework: "hugo"
+    category: ["blog"]
+    description: "Minimal Hugo blog theme"
+    stars: 500
+    license: "MIT"
+    demo_url: "https://themes.gohugo.io/themes/hugo-paper/"
+    features:
+      - "Markdown"
+      - "RSS"
+      - "Taxonomy"
+
+  - id: "hugo-ananke"
+    name: "Ananke"
+    framework: "hugo"
+    category: ["blog", "marketing"]
+    description: "Official Hugo theme"
+    stars: 1200
+    license: "MIT"
+    demo_url: "https://themes.gohugo.io/themes/gohugoio-ananke/"
+    features:
+      - "Responsive"
+      - "SEO"
+      - "Social"
+
+  - id: "hugo-coder"
+    name: "Coder"
+    framework: "hugo"
+    category: ["blog", "portfolio"]
+    description: "Clean blog for coders"
+    stars: 800
+    license: "MIT"
+    demo_url: "https://themes.gohugo.io/themes/hugo-coder/"
+    features:
+      - "Syntax highlighting"
+      - "Dark mode"
+      - "Disqus"
+
+  - id: "hugo-papermod"
+    name: "PaperMod"
+    framework: "hugo"
+    category: ["blog"]
+    description: "Feature-rich blog theme"
+    stars: 2500
+    license: "MIT"
+    demo_url: "https://themes.gohugo.io/themes/papermod-hugo/"
+    features:
+      - "Search"
+      - "Table of contents"
+      - "Dark mode"
+
+  - id: "hugo-universal"
+    name: "Universal"
+    framework: "hugo"
+    category: ["business", "marketing"]
+    description: "Multi-purpose business theme"
+    stars: 400
+    license: "MIT"
+    demo_url: "https://themes.gohugo.io/themes/hugo-universal/"
+    features:
+      - "Carousel"
+      - "Contact form"
+      - "Gallery"
+
+  # ==========================================
+  # HTML TEMPLATES (5)
+  # ==========================================
+
+  - id: "html5up-bold"
+    name: "Bold"
+    framework: "html"
+    category: ["business", "portfolio"]
+    description: "Bold multi-page business template"
+    demo_url: "https://html5up.net/bold"
+    features:
+      - "Responsive"
+      - "Multi-page"
+      - "PHP contact"
+
+  - id: "html5up-stellar"
+    name: "Stellar"
+    framework: "html"
+    category: ["landing", "business"]
+    description: "Clean landing page"
+    demo_url: "https://html5up.net/stellar"
+    features:
+      - "Responsive"
+      - "Single page"
+
+  - id: "html5up-multiverse"
+    name: "Multiverse"
+    framework: "html"
+    category: ["portfolio"]
+    description: "Portfolio template"
+    demo_url: "https://html5up.net/multiverse"
+    features:
+      - "Gallery"
+      - "Shortcodes"
+
+  - id: "html5up-arcana"
+    name: "Arcana"
+    framework: "html"
+    category: ["business"]
+    description: "Business theme"
+    demo_url: "https://html5up.net/arcana"
+    features:
+      - "Services"
+      - "Team"
+
+  - id: "html5up-fifty"
+    name: "Fifty"
+    framework: "html"
+    category: ["landing"]
+    description: "Minimal landing template"
+    demo_url: "https://html5up.net/fifty"
+    features:
+      - "Clean design"
+      - "Responsive"
+
+# Design System Integrations
+# Each template can be combined with these design systems
+
+design_systems:
+  - id: "swiss"
+    name: "Swiss International"
+    compatible_templates: "*"
+    
+  - id: "editorial"
+    name: "Warm Editorial"
+    compatible_templates: "*"
+    
+  - id: "tech-noir"
+    name: "Tech Noir"
+    compatible_templates: "*"
+    
+  - id: "playful"
+    name: "Playful"
+    compatible_templates: "*"
+    
+  - id: "minimal"
+    name: "Minimal"
+    compatible_templates: "*"
+    
+  - id: "contemporary"
+    name: "Contemporary"
+    compatible_templates: "*"
+    
+  - id: "template-default"
+    name: "Template Default"
+    description: "Use template's built-in design"
+    compatible_templates: "*"
+
+# Category mappings
+categories:
+  - id: "saas"
+    name: "SaaS / Startup"
+    description: "Marketing sites for software products"
+    
+  - id: "blog"
+    name: "Blog"
+    description: "Personal or professional blogs"
+    
+  - id: "portfolio"
+    name: "Portfolio"
+    description: "Creative portfolios and personal sites"
+    
+  - id: "ecommerce"
+    name: "Ecommerce"
+    description: "Online stores and product catalogs"
+    
+  - id: "documentation"
+    name: "Documentation"
+    description: "Technical docs and knowledge bases"
+    
+  - id: "dashboard"
+    name: "Dashboard"
+    description: "Admin dashboards and control panels"
+    
+  - id: "landing"
+    name: "Landing Page"
+    description: "Single-page marketing sites"
+    
+  - id: "business"
+    name: "Business"
+    description: "Corporate and business websites"
+    
+  - id: "marketing"
+    name: "Marketing"
+    description: "Marketing and advertising sites"

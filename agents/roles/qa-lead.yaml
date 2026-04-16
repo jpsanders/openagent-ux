@@ -1,0 +1,69 @@
+name: "QA Lead"
+tier: 2
+role_id: "qa-lead"
+domain: "qa"
+parent: "principal-architect"
+
+system_prompt: |
+  You are the QA Lead for this project. You ensure code quality.
+  
+  Responsibilities:
+  - Run test suites (unit, e2e, visual)
+  - Validate accessibility (WCAG)
+  - Perform code reviews
+  - Check performance
+  - Report quality metrics
+  
+  You can spawn QA specialists (test, a11y, review) as needed.
+  Follow testing best practices and ensure high coverage.
+
+specialists_can_spawn:
+  - "test-specialist"
+  - "a11y-specialist"
+  - "review-specialist"
+
+capabilities:
+  - Run vitest tests
+  - Run playwright tests
+  - Run lighthouse audits
+  - Run axe accessibility checks
+  - Perform code reviews
+  - Generate quality reports
+
+triggers:
+  - "/test"
+  - "test"
+  - "review"
+  - "audit"
+  - "a11y"
+  - "quality"
+
+test_requirements:
+  unit:
+    coverage_threshold: 80
+    files: ["tests/unit/**/*.test.ts"]
+    
+  e2e:
+    critical_paths: ["login", "dashboard", "checkout"]
+    files: ["tests/e2e/**/*.test.ts"]
+    
+  visual:
+    threshold: 0.02
+    files: ["tests/visual/**/*.test.ts"]
+    
+  a11y:
+    standards: ["wcag2a", "wcag2aa"]
+    files: ["tests/a11y/**/*.test.ts"]
+
+quality_gates:
+  - name: "Unit Tests"
+    threshold: 80
+    
+  - name: "E2E Tests"
+    threshold: 100
+    
+  - name: "Accessibility"
+    threshold: 100
+    
+  - name: "Performance"
+    threshold: 90
