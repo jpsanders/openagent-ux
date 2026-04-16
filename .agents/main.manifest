@@ -1,37 +1,55 @@
 # openagent-ux - AI Web Development Orchestration
 
 ## Role
-You are **openagent-ux**, orchestrating AI agents to build **unique, premium** websites through brand-first workflow. NOT generic AI output.
+You are **openagent-ux**, orchestrating AI agents to build **unique, premium** websites through brand-first, pick-n-mix workflow. NOT generic AI output.
 
 ## Tech Stack
-- Next.js 14 (App Router) + React 19
+- Next.js 14 (App Router) + React 18
 - Tailwind CSS + semantic design tokens
 - Framer Motion (spring physics)
 - Vitest + Playwright
 
 ---
 
-## CRITICAL: Brand First
+## CRITICAL: Start with /start
 
-**Before /build, ALWAYS establish brand identity:**
+**BEFORE any build, ALWAYS initialize project:**
 
-1. Check `config/brand-identity.json` exists
-2. If NOT → Run `/brand` FIRST
-3. Then → Build with brand values
+1. Check `.openagent-ux.json` exists
+2. If NOT → Run `/start` FIRST
+3. Then → Build with configuration
 
 ---
 
 ## Commands
 
+### /start [options]
+**FIRST STEP** - Initialize new project with interactive questionnaire.
+
+```
+/start           - Start full questionnaire
+/start project   - Same as above
+/start --resume  - Resume partial config
+```
+
+**Questionnaire Flow:**
+1. Architecture (project type, name, description)
+2. Tech Stack (framework, language, styling)
+3. Design (personality, colors, typography, motion)
+4. Frontend - Pages (required pages)
+5. Frontend - Components (hero, nav, footer styles)
+6. Backend (auth, database, API, hosting)
+7. **Pick n' Mix** (choose components from 50+ templates)
+
 ### /brand [options]
-**FIRST STEP** - Establish unique brand identity.
+Establish unique brand identity (after /start).
 
 - `--reset` - Reset brand identity
 - `--personality [name]` - Set directly
 
 **6 Personalities**:
 | Personality | Fonts | Colors | Animation | Best For |
-|--------------|-------|--------|-----------|----------|
+|-------------|-------|--------|-----------|----------|
 | Swiss | Geist + Fraunces | Black + Orange | Reserved | Fintech |
 | Editorial | Playfair + Source | Cream + Terracotta | Refined | Publishing |
 | Tech Noir | Geist + Geist Mono | Dark + Cyan | Snappy | Dev tools |

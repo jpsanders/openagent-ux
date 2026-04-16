@@ -22,7 +22,7 @@ Every AI-generated website looks the same:
 openagent-ux uses **50+ pre-built templates** and **19 component libraries** as the foundation. Instead of generating generic AI code, the AI assembles unique sites from real, quality components you can see and choose from.
 
 ```
-git clone → npm install → npm run init → AI builds your site
+git clone → npm install → /start → AI builds your site
 ```
 
 ---
@@ -37,20 +37,19 @@ cd openagent-ux
 # 2. Install dependencies
 npm install
 
-# 3. Run initialization (launches questionnaire + AI agent)
-npm run init
+# 3. Run /start in your AI agent
+# Agent runs interactive questionnaire, then builds your site
 
-# 4. Or fetch all templates first (optional - templates auto-download on init)
+# Optional: Fetch templates first for offline use
 npm run fetch:all
 ```
 
-**What happens during `npm run init`:**
+**What happens during `/start`:**
 
-1. Questionnaire launches in your terminal
-2. You answer questions about: Architecture, Tech Stack, Design, Frontend, Backend
-3. **Pick n' Mix** section - choose components from real templates
-4. Configuration saved to `.openagent-ux.json`
-5. **AI agent launches** with your configuration and builds the site
+1. Agent asks interactive questions about: Architecture, Tech Stack, Design, Frontend, Backend
+2. **Pick n' Mix** section - choose components from real templates
+3. Configuration saved to `.openagent-ux.json`
+4. **Principal Architect** orchestrates the build using your choices
 
 ---
 
@@ -58,33 +57,33 @@ npm run fetch:all
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                           NEW PROJECT WORKFLOW                          │
+│                           PROJECT WORKFLOW                              │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
-│   git clone           npm install          npm run init                │
-│       │                    │                    │                      │
-│       ▼                    ▼                    ▼                      │
-│   [Clone Repo]    →   [Install Deps]   →   [Questionnaire]             │
-│                                                │                       │
-│                                                ▼                       │
+│   git clone           npm install          /start (in agent)            │
+│       │                    │                    │                       │
+│       ▼                    ▼                    ▼                       │
+│   [Clone Repo]    →   [Install Deps]   →   [Interactive Questionnaire] │
+│                                                │                        │
+│                                                ▼                        │
 │                                    1. Architecture (project type)      │
-│                                    2. Tech Stack (framework, etc)      │
-│                                    3. Design (personality, colors)    │
-│                                    4. Frontend (pages, components)      │
+│                                    2. Tech Stack (framework, etc)       │
+│                                    3. Design (personality, colors)     │
+│                                    4. Frontend (pages, components)     │
 │                                    5. Backend (auth, DB, API)          │
 │                                    6. Pick n' Mix (choose components)  │
-│                                                │                       │
-│                                                ▼                       │
-│                                    AI Agent Receives Config             │
-│                                                │                       │
-│                                                ▼                       │
-│                                    Principal Architect Orchestrates    │
-│                                    ├─ Design Lead                     │
-│                                    ├─ Frontend Lead                    │
+│                                                │                        │
+│                                                ▼                        │
+│                                    Config saved to .openagent-ux.json  │
+│                                                │                        │
+│                                                ▼                        │
+│                                    Principal Architect Orchestrates     │
+│                                    ├─ Design Lead                      │
+│                                    ├─ Frontend Lead                     │
 │                                    ├─ Backend Lead                     │
-│                                    └─ QA Lead                          │
-│                                                │                       │
-│                                                ▼                       │
+│                                    └─ QA Lead                           │
+│                                                │                        │
+│                                                ▼                        │
 │                                    Site Assembled from Pick n' Mix      │
 │                                    Using Real Template Components      │
 │                                                                         │
@@ -212,13 +211,24 @@ Choose your brand's personality - determines fonts, colors, AND animations:
 
 | Script | Description |
 |--------|-------------|
-| `npm run init` | Launch questionnaire + AI agent |
 | `npm run fetch:templates` | Download all templates |
 | `npm run fetch:components` | Download community components |
 | `npm run fetch:all` | Download everything |
 | `npm run extract:components` | Generate component registry |
 | `npm run dev` | Start Next.js dev server |
 | `npm run test` | Run tests |
+
+---
+
+## Agent Commands
+
+| Command | Description |
+|---------|-------------|
+| `/start` | **FIRST** - Initialize project with interactive questionnaire |
+| `/brand` | Set design personality (after /start) |
+| `/build` | Build component/page/landing |
+| `/polish` | Final quality pass |
+| `/test` | Run tests (unit/e2e/visual/a11y) |
 
 ---
 
@@ -283,7 +293,6 @@ openagent-ux/
 │   └── blog/
 │
 ├── scripts/
-│   ├── init.js               # Questionnaire + agent launcher
 │   ├── fetch_all_templates.py # Download templates
 │   └── extract_components.py # Generate component registry
 │
@@ -292,6 +301,7 @@ openagent-ux/
 │   ├── roles/                # Agent role definitions
 │   └── scripts/              # Python orchestration scripts
 │
+└── .agents/skills/init/      # /start command skill
 └── components-registry.json  # Generated component database
 ```
 
