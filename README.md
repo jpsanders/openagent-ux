@@ -2,34 +2,27 @@
 
 > AI-powered frontend builder that creates UNIQUE, premium websites - NOT generic AI slop.
 
-[![Stars](https://img.shields.io/github/stars/jpsanders/openagent-ux?style=flat&label=Stars)](https://github.com/jpsanders/openagent-ux/stargazers)
-[![Forks](https://img.shields.io/github/forks/jpsanders/openagent-ux?style=flat&label=Forks)](https://github.com/jpsanders/openagent-ux/network)
-[![License](https://img.shields.io/github/license/jpsanders/openagent-ux?style=flat)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/jpsanders/openagent-ux/main?style=flat)](https://github.com/jpsanders/openagent-ux/commits/main)
+The **pick n' mix** website builder powered by 50+ pre-built templates, 19 community component libraries, and a multi-agent system.
 
-Built with: **Next.js 14** | **React 19** | **Framer Motion** | **Claude Code**
+[![Stars](https://img.shields.io/github/stars/jpsanders/openagent-ux?style=flat&label=Stars)](https://github.com/jpsanders/openagent-ux/stargazers)
+[![License](https://img.shields.io/github/license/jpsanders/openagent-ux?style=flat)](LICENSE)
 
 ---
 
 ## The Problem
 
 Every AI-generated website looks the same:
-
 - Inter font everywhere
 - Blue buttons, purple gradients
 - Generic components
 - Like "AI made this" 😓
 
-## The Solution - Brand First
+## The Solution - Pick n' Mix from Real Code
 
-openagent-ux forces intentional brand identity BEFORE any code:
+openagent-ux uses **50+ pre-built templates** and **19 component libraries** as the foundation. Instead of generating generic AI code, the AI assembles unique sites from real, quality components you can see and choose from.
 
 ```
-/brand     → Choose your personality (Swiss, Editorial, Tech Noir, Playful, Minimal, Contemporary)
-/build     → Build with your unique fonts, colors, motion
-/polish    → Fine-tune every detail
-/test      → Verify with unit, E2E, accessibility tests
-/preview   → Ship with performance confidence
+git clone → npm install → npm run init → AI builds your site
 ```
 
 ---
@@ -37,185 +30,326 @@ openagent-ux forces intentional brand identity BEFORE any code:
 ## Quick Start
 
 ```bash
-# Clone the repo
+# 1. Clone the repo
 git clone https://github.com/jpsanders/openagent-ux.git
 cd openagent-ux
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Copy skills to Claude Code (for local use)
-mkdir -p ~/.claude/agents
-cp -r .agents/* ~/.claude/agents/
+# 3. Run initialization (launches questionnaire + AI agent)
+npm run init
 
-# Start the demo
-cd example-app
-npm run dev
+# 4. Or fetch all templates first (optional - templates auto-download on init)
+npm run fetch:all
 ```
 
-**Then in your AI agent:**
+**What happens during `npm run init`:**
+
+1. Questionnaire launches in your terminal
+2. You answer questions about: Architecture, Tech Stack, Design, Frontend, Backend
+3. **Pick n' Mix** section - choose components from real templates
+4. Configuration saved to `.openagent-ux.json`
+5. **AI agent launches** with your configuration and builds the site
+
+---
+
+## The Workflow
 
 ```
-/brand     → First! Choose one of 6 personalities
-/build landing my-site
-/polish
-/test all
-/preview
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           NEW PROJECT WORKFLOW                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   git clone           npm install          npm run init                │
+│       │                    │                    │                      │
+│       ▼                    ▼                    ▼                      │
+│   [Clone Repo]    →   [Install Deps]   →   [Questionnaire]             │
+│                                                │                       │
+│                                                ▼                       │
+│                                    1. Architecture (project type)      │
+│                                    2. Tech Stack (framework, etc)      │
+│                                    3. Design (personality, colors)    │
+│                                    4. Frontend (pages, components)      │
+│                                    5. Backend (auth, DB, API)          │
+│                                    6. Pick n' Mix (choose components)  │
+│                                                │                       │
+│                                                ▼                       │
+│                                    AI Agent Receives Config             │
+│                                                │                       │
+│                                                ▼                       │
+│                                    Principal Architect Orchestrates    │
+│                                    ├─ Design Lead                     │
+│                                    ├─ Frontend Lead                    │
+│                                    ├─ Backend Lead                     │
+│                                    └─ QA Lead                          │
+│                                                │                       │
+│                                                ▼                       │
+│                                    Site Assembled from Pick n' Mix      │
+│                                    Using Real Template Components      │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Available Templates (33 Downloaded)
+
+### Astro (9)
+- astrowind - SaaS/marketing
+- astroship - Startup
+- astro-paper - Blog
+- astrofy - Portfolio
+- blogsmith-free - Blog
+- astro-cactus - Blog/Docs
+- flowbite-admin - Dashboard
+- starlight-docs - Documentation
+- astro-boilerplate - Boilerplate
+
+### Gatsby (8)
+- gatsby-starter-blog - Blog
+- gatsby-portfolio-cara - Portfolio
+- gatsby-minimal-blog - Blog
+- gatsby-advanced-starter - Boilerplate
+- gatsby-decap-cms - Blog/CMS
+- gatsby-starter-shopify - E-commerce
+- gatsby-gitbook-starter - Docs
+- gatsby-starter-ghost - Blog
+
+### Next.js (7)
+- nextjs-blog-starter - Blog
+- nextjs-commerce - E-commerce
+- nextjs-dashboard - Dashboard
+- nextjs-saas-starter - SaaS
+- nextjs-docs - Documentation
+- nextjs-portfolio - Portfolio
+- nextjs-medusa - E-commerce
+
+### Nuxt (6)
+- nuxt-starter - Boilerplate
+- nuxt-content-template - Blog/Docs
+- nuxt-docus - Documentation
+- nuxt-commerce - E-commerce
+- nuxt-layered-architecture - Boilerplate
+- nuxt-module-starter - Development
+
+### Hugo (3)
+- hugo-ananke - Blog/Marketing
+- hugo-papermod - Blog
+- hugo-universal - Business
+
+---
+
+## Community Components (16 Downloaded)
+
+### UI Component Libraries
+- **shadcn-ui** - Beautiful React components
+- **radix-ui** - Unstyled accessible primitives
+- **headless-ui** - Accessible UI components
+- **ark-ui** - Headless UI for React
+- **daisyui** - Tailwind CSS component library
+
+### Design Systems
+- **chakra-ui** - Component library
+- **mantine** - React components
+- **primereact** - UI Component Library
+- **ant-design** - Enterprise UI
+
+### Animation Libraries
+- **framer-motion** - Animation library
+- **react-spring** - Spring-based animation
+- **motion-one** - Lightweight animation
+
+### Icons
+- **heroicons** - SVG icons
+- **lucide-react** - Beautiful icons
+- **phosphor-icons** - Phosphor Icons
+- **remix-icon** - Open source icons
+
+---
+
+## Component Registry
+
+After running `npm run extract:components`, a registry is generated at `components-registry.json`:
+
+- **14,000+** components extracted
+- **200+** pages
+- **4,400+** page sections
+- Organized by type: button, navbar, hero, card, form, modal, etc.
+
+```json
+{
+  "components": {
+    "button": [{"name": "Button", "template": "astrowind", "path": "..."}],
+    "navbar": [{"name": "Navbar", "template": "starlight", "path": "..."}],
+    ...
+  },
+  "pages": {
+    "home": [{"name": "index", "template": "nextjs-dashboard", "path": "..."}],
+    ...
+  }
+}
 ```
 
 ---
 
 ## 6 Design Personalities
 
-Choose your brand's personality - this determines fonts, colors, AND animations:
+Choose your brand's personality - determines fonts, colors, AND animations:
 
 | Personality | Font Pairing | Colors | Animation Feel | Best For |
-|--------------|--------------|--------|----------------|----------|
+|-------------|---------------|--------|----------------|----------|
 | **Swiss** | Geist + Fraunces | Black + Orange | Reserved, precise | Fintech, enterprise |
 | **Editorial** | Playfair + Source | Cream + Terracotta | Refined, gentle | Publishing, luxury |
 | **Tech Noir** | Geist + Geist Mono | Dark + Cyan | Snappy, functional | Dev tools, Web3 |
-| **Playful** | Outfit + Nunito | Coral + Mint | Bouncy, expressive | Consumer apps, games |
+| **Playful** | Outfit + Nunito | Coral + Mint | Bouncy, expressive | Consumer apps |
 | **Minimal** | Satoshi + General | Off-white + Black | Subtle, essential | Agencies, portfolios |
 | **Contemporary** | Syne + DM Sans | Charcoal + Pink | Dynamic, bold | Creative agencies |
 
 ---
 
-## Anti-Slop System (Always Active)
+## NPM Scripts
 
-These guardrails BLOCK generic AI output automatically:
-
-```
-❌ Inter font as primary          → BLOCKED - Must use distinctive pairing
-❌ blue-500 as primary color    → BLOCKED - Must use curated palette
-❌ purple-to-pink gradient     → BLOCKED - Must use brand colors
-❌ Generic empty states        → BLOCKED - Must create distinctive
-❌ No micro-interactions       → BLOCKED - Must add personality
-```
-
-**Result**: Every website built through this system feels UNIQUE - NOT generic AI output.
+| Script | Description |
+|--------|-------------|
+| `npm run init` | Launch questionnaire + AI agent |
+| `npm run fetch:templates` | Download all templates |
+| `npm run fetch:components` | Download community components |
+| `npm run fetch:all` | Download everything |
+| `npm run extract:components` | Generate component registry |
+| `npm run dev` | Start Next.js dev server |
+| `npm run test` | Run tests |
 
 ---
 
-## Commands
+## Multi-Agent System
 
-| Command | Purpose | Example |
-|---------|---------|---------|
-| `/brand` | Establish unique brand identity (FIRST!) | `/brand` then choose personality |
-| `/build` | Build component/page/landing | `/build landing my-site` |
-| `/polish` | Final quality pass | `/polish` |
-| `/test` | Run tests (unit/e2e/visual/a11y) | `/test all` |
-| `/preview` | Dev server with audit | `/preview` |
+openagent-ux uses a hierarchical multi-agent system:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    PRINCIPAL ARCHITECT                       │
+│         (Tier 1) - Strategic decisions, ownership            │
+├─────────────────────────────────────────────────────────────┤
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │ Design Lead  │  │Frontend Lead│  │ Backend Lead│      │
+│  │   (Tier 2)   │  │   (Tier 2)   │  │   (Tier 2)   │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+│  ┌──────────────┐  ┌──────────────┐                         │
+│  │   QA Lead    │  │  Specialists│                          │
+│  │   (Tier 2)   │  │   (Tier 3)  │                          │
+│  └──────────────┘  └──────────────┘                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+The Principal Architect receives the questionnaire config and orchestrates all agents.
 
 ---
 
-## Demo Features
+## Directory Structure
 
-The included demo showcases ALL 6 personalities:
-
-- **Landing page** with live personality switcher
-- **6 complete design systems** (fonts + colors + animations)
-- **Premium components**: Button, Card, Navigation with all states
-- **Smooth Framer Motion animations** matched to personality
-- **Responsive** on all devices
-- **Dark/light mode** support
-
-Run the demo:
-```bash
-cd example-app
-npm run dev
+```
+openagent-ux/
+├── .agents/                    # AI agent skills
+│   ├── skills/
+│   │   ├── brand/             # Design personality selection
+│   │   ├── build/             # Build commands
+│   │   ├── anti-slop/         # Block generic AI output
+│   │   └── ...
+│   └── subagents/             # Specialized subagents
+│
+├── templates/                  # 33 downloaded templates
+│   ├── astro/                 # Astro templates
+│   ├── gatsby/               # Gatsby templates
+│   ├── nextjs/               # Next.js templates
+│   ├── nuxt/                 # Nuxt templates
+│   ├── hugo/                 # Hugo templates
+│   └── registry/             # Template catalog
+│
+├── components/                # 16 community component libs
+│   └── community/            # shadcn-ui, radix-ui, etc.
+│
+├── design-systems/            # 6 personality CSS token sets
+│   ├── swiss/
+│   ├── editorial/
+│   ├── tech-noir/
+│   ├── playful/
+│   ├── minimal/
+│   └── contemporary/
+│
+├── layouts/                   # Page layout templates
+│   ├── landing/
+│   ├── dashboard/
+│   └── blog/
+│
+├── scripts/
+│   ├── init.js               # Questionnaire + agent launcher
+│   ├── fetch_all_templates.py # Download templates
+│   └── extract_components.py # Generate component registry
+│
+├── agents/                   # Multi-agent system config
+│   ├── config/               # hierarchy, roles, pipelines
+│   ├── roles/                # Agent role definitions
+│   └── scripts/              # Python orchestration scripts
+│
+└── components-registry.json  # Generated component database
 ```
 
 ---
 
-## Installation
+## Environment Variables
 
-### Option 1: Git clone + copy to Claude Code
-```bash
-git clone https://github.com/jpsanders/openagent-ux.git
-cp -r .agents/* ~/.claude/agents/
-```
+Create a `.env` file:
 
-### Option 2: Claude Code plugin (coming soon)
-```bash
-/plugin marketplace add https://github.com/jpsanders/openagent-ux
-/plugin install openagent-ux@latest
+```env
+# AI Agent configuration
+OPENCODE_AGENT=opencode        # Default agent (can override to 'claude')
+OPENCODE_MODE=interactive      # or 'autonomous'
+
+# Database (if using)
+DATABASE_URL=postgresql://...
+
+# Auth (if using)
+AUTH_SECRET=your-secret-key
 ```
 
 ---
 
 ## Tech Stack
 
-- Next.js 14 (App Router)
-- React 19
-- Tailwind CSS (semantic design tokens)
-- Framer Motion (spring physics)
-- Vitest (unit testing)
-- Playwright (E2E testing)
-- Claude Code (agent orchestration)
-
----
-
-## What's Inside
-
-```
-openagent-ux/
-├── .agents/              # Skills & subagents (copy to ~/.claude/)
-│   ├── skills/
-│   │   ├── premium-brand/     # /brand command - FIRST STEP
-│   │   ├── anti-slop/         # Blocks generic output
-│   │   ├── premium-typography/# 12 distinctive fonts
-│   │   ├── premium-palettes/  # 10 curated color palettes
-│   │   ├── motion-personality/# Animation → brand matching
-│   │   ├── premium-build/    # /build command
-│   │   ├── premium-test/     # /test command
-│   │   ├── premium-preview/  # /preview command
-│   │   └── polish/           # /polish command
-│   └── subagents/            # Specialized agents
-│       ├── design.manifest
-│       ├── ui-architect.manifest
-│       └── ...
-├── example-app/          # Demo landing with switcher
-│   ├── app/
-│   ├── components/
-│   └── lib/
-└── config/               # Generated brand identity
-    └── brand-identity.json
-```
+- **Next.js 14** (App Router)
+- **React 18**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Python 3** (for template fetching/extraction)
+- **Vitest** (unit testing)
+- **Playwright** (E2E testing)
 
 ---
 
 ## Star This Repo If...
 
 - ✅ You want **unique** websites, NOT generic AI output
-- ✅ You want **premium** design, NOT Bootstrap defaults  
-- ✅ You want **brand-first** workflow, NOT build-first
+- ✅ You want **premium** design, NOT Bootstrap defaults
+- ✅ You want **pick n' mix** workflow from real templates
 - ✅ You're tired of Inter + blue-500
-- ✅ You want production-ready testing (Vitest + Playwright)
+- ✅ You want production-ready testing
 
 ---
 
 ## Roadmap
 
-- [ ] Claude Code plugin marketplace submission
-- [ ] VS Code extension
-- [ ] More component templates
-- [ ] AI-powered content generation
+- [x] 33+ templates downloaded
+- [x] 16 community components imported
+- [x] Component extraction + registry
+- [x] Init questionnaire + AI agent workflow
+- [ ] Remaining templates (fetch on demand)
+- [ ] More design personalities
 - [ ] Figma import
-
----
-
-## Contributing
-
-Contributions welcome! Feel free to open issues and PRs.
+- [ ] Visual editor
 
 ---
 
 ## License
 
 MIT License - Use it for anything.
-
----
-
-<a href="https://github.com/jpsanders/openagent-ux">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24" height="24" alt="GitHub">
-</a>

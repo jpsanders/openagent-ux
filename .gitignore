@@ -42,6 +42,25 @@ pnpm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Templates - download with npm run fetch:templates
+templates/astro/
+templates/gatsby/
+templates/nextjs/
+templates/nuxt/
+templates/hugo/
+templates/html/
+
+# Community components - download with npm run fetch:components
+components/community/
+
+# Generated registry (regenerated with npm run extract:components)
+components-registry.json
+
 # Temporary
 *.tmp
 temp/
+
+# Python cache
+__pycache__/
+*.pyc
+scripts/__pycache__/

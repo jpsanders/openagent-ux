@@ -22,7 +22,12 @@
     "test:a11y": "playwright test --grep @a11y",
     "preview": "npm run dev",
     "analyze": "ANALYZE=true next build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "init": "node scripts/init.js",
+    "fetch:templates": "python3 scripts/fetch_all_templates.py templates",
+    "fetch:components": "python3 scripts/fetch_all_templates.py components",
+    "fetch:all": "python3 scripts/fetch_all_templates.py all",
+    "extract:components": "python3 scripts/extract_components.py"
   },
   "dependencies": {
     "next": "14.2.15",
