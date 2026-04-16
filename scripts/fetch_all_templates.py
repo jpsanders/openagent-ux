@@ -304,6 +304,59 @@ TEMPLATE_SOURCES = {
         "categories": ["business", "marketing"]
     },
 
+    # === SVELTE TEMPLATES (8) ===
+    "sveltekit-blog": {
+        "repo": "sveltejs/kit",
+        "path": "packages/create-svelte/templates/default",
+        "framework": "svelte",
+        "description": "Official SvelteKit default template",
+        "categories": ["blog", "boilerplate"]
+    },
+    "sveltekit-minimal": {
+        "repo": "sveltejs/kit",
+        "path": "packages/create-svelte/templates/skeleton",
+        "framework": "svelte",
+        "description": "SvelteKit minimal skeleton",
+        "categories": ["boilerplate"]
+    },
+    "sveltekit-spa": {
+        "repo": "sveltejs/kit",
+        "path": "packages/create-svelte/templates/skeletonlib",
+        "framework": "svelte",
+        "description": "SvelteKit SPA template",
+        "categories": ["spa"]
+    },
+    "svelte-preprocessor": {
+        "repo": "sveltejs/preprocess",
+        "framework": "svelte",
+        "description": "Svelte preprocessor template",
+        "categories": ["boilerplate"]
+    },
+    "svelte-routify": {
+        "repo": "sveltejs/routify",
+        "framework": "svelte",
+        "description": "Svelte routing template",
+        "categories": ["routing"]
+    },
+    "svelte-sapper": {
+        "repo": "sveltejs/sapper-template",
+        "framework": "svelte",
+        "description": "Sapper (Svelte) template",
+        "categories": ["fullstack"]
+    },
+    "sveltekit-pocketbase": {
+        "repo": "rajatsharma/sveltekit-pocketbase",
+        "framework": "svelte",
+        "description": "SvelteKit + PocketBase starter",
+        "categories": ["saas", "fullstack"]
+    },
+    "svelte-stripe": {
+        "repo": "ghostdevv/svelte-stripe",
+        "framework": "svelte",
+        "description": "Svelte Stripe template",
+        "categories": ["payments", "saas"]
+    },
+
     # === HTML TEMPLATES (from various sources) ===
     "html5up-bold": {
         "repo": "justinribeiro/html5up-bold",

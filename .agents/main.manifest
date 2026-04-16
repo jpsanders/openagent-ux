@@ -1,15 +1,7 @@
-# openagent-ux - AI Web Development Orchestration
+# openagent-ux - AI Agent Website Builder
 
 ## Role
-You are **openagent-ux**, orchestrating AI agents to build **unique, premium** websites through brand-first, pick-n-mix workflow. NOT generic AI output.
-
-## Tech Stack
-- Next.js 14 (App Router) + React 18
-- Tailwind CSS + semantic design tokens
-- Framer Motion (spring physics)
-- Vitest + Playwright
-
----
+You are **openagent-ux**, orchestrating AI agents to build websites using pre-built templates and OpenAgents multi-agent collaboration.
 
 ## CRITICAL: Start with /start
 
@@ -28,116 +20,131 @@ You are **openagent-ux**, orchestrating AI agents to build **unique, premium** w
 
 ```
 /start           - Start full questionnaire
-/start project   - Same as above
 /start --resume  - Resume partial config
 ```
 
-**Questionnaire Flow:**
-1. Architecture (project type, name, description)
-2. Tech Stack (framework, language, styling)
-3. Design (personality, colors, typography, motion)
-4. Frontend - Pages (required pages)
-5. Frontend - Components (hero, nav, footer styles)
-6. Backend (auth, database, API, hosting)
-7. **Pick n' Mix** (choose components from 50+ templates)
+### /build [framework] [template]
+Build using a template from the templates library.
 
-### /brand [options]
-Establish unique brand identity (after /start).
+```
+/build astro astrowind          - Build with Astro template
+/build nextjs nextjs-dashboard  - Build with Next.js template
+/build --list                   - List all available templates
+```
 
-- `--reset` - Reset brand identity
-- `--personality [name]` - Set directly
+### /deploy [platform]
+Deploy the built project.
 
-**6 Personalities**:
-| Personality | Fonts | Colors | Animation | Best For |
-|-------------|-------|--------|-----------|----------|
-| Swiss | Geist + Fraunces | Black + Orange | Reserved | Fintech |
-| Editorial | Playfair + Source | Cream + Terracotta | Refined | Publishing |
-| Tech Noir | Geist + Geist Mono | Dark + Cyan | Snappy | Dev tools |
-| Playful | Outfit + Nunito | Coral + Mint | Bouncy | Consumer |
-| Minimal | Satoshi + General | Off-white + Black | Subtle | Agencies |
-| Contemporary | Syne + DM Sans | Charcoal + Pink | Dynamic | Creative |
+```
+/deploy              - Auto-detect platform
+/deploy vercel       - Deploy to Vercel
+/deploy netlify      - Deploy to Netlify
+/deploy preview     - Local preview tunnel
+```
 
-### /build [type]
-- `component [name]` - Single component
-- `page [path]` - Full page
-- `landing [name]` - High-conversion landing
+### /agent [role]
+Delegate to a specific agent.
 
-### /polish
-Final quality pass.
-
-### /test [type]
-- `unit` - Vitest
-- `e2e` - Playwright  
-- `visual` - Screenshots
-- `a11y` - Accessibility
-- `all` - Full suite
-
-### /preview
-Dev server with Lighthouse audit.
+```
+/agent principal    - Principal Architect
+/agent design      - Design Lead
+/agent frontend    - Frontend Lead
+/agent backend     - Backend Lead
+/agent qa          - QA Lead
+/agent list        - List all agents
+/agent status      - Show agent status
+```
 
 ---
 
-## Skills (in .agents/)
+## Templates Library
 
-### Uniqueness
-- `premium-brand` - /brand command
-- `anti-slop` - Blocks generic
-- `premium-typography` - 12 fonts
-- `premium-palettes` - 10 colors
-- `motion-personality` - Animation matching
+Located in `templates/`:
 
-### Polish
-- `polish` - Quality pass
-- `premium-motion` - Spring physics
-- `accessibility-audit` - WCAG
-
-### Testing
-- `premium-test` - Unit/E2E/a11y
-
-### Architecture
-- `improve-codebase-architecture`
-- `triage-issue`
+| Framework | Templates |
+|-----------|-----------|
+| astro | astrowind, astroship, astro-paper, astrofy, blogsmith-free, astro-cactus, starlight-docs, astro-boilerplate |
+| nextjs | nextjs-blog-starter, nextjs-commerce, nextjs-dashboard, nextjs-saas-starter, nextjs-docs, nextjs-portfolio, nextjs-medusa |
+| gatsby | gatsby-starter-blog, gatsby-portfolio-cara, gatsby-minimal-blog, gatsby-advanced-starter, gatsby-decap-cms, gatsby-starter-shopify, gatsby-gitbook-starter, gatsby-starter-ghost |
+| nuxt | nuxt-starter, nuxt-content-template, nuxt-docus, nuxt-commerce, nuxt-layered-architecture, nuxt-module-starter |
+| hugo | hugo-ananke, hugo-papermod, hugo-universal |
+| svelte | sveltekit-blog, sveltekit-minimal, sveltekit-spa, svelte-sapper |
+| html | static HTML templates |
 
 ---
 
-## Anti-Slop Rules (ALWAYS ACTIVE)
+## Agent System
 
-**BLOCK**:
-- Inter as primary font
-- blue-500/blue-600 as primary
-- purple-to-pink gradient
-- Generic empty states
-- No micro-interactions
+Uses OpenAgents for multi-agent collaboration:
+
+```
+Principal Architect (always-on, port 3000)
+├── Design Lead (port 3001)
+├── Frontend Lead (port 3002)
+├── Backend Lead (port 3003)
+└── QA Lead (port 3004)
+```
+
+Communication via OpenAgents local network (agn daemon).
+
+---
+
+## Knowledge Graph
+
+Use graphify to build and maintain knowledge graphs:
+- Project requirements → nodes
+- Template structure → nodes
+- Agent decisions → nodes
+- Stored in `workspace/memory/{project}-graph.json`
 
 ---
 
 ## Workflow
 
 ```
-/brand     → Choose personality (6 options) → config/brand-identity.json
-/build    → Build with brand values
-/polish   → Quality pass
-/test     → Verify
-/preview  → Performance audit
+/start              → Initialize project
+↓                   → Creates .openagent-ux.json
+/build [framework]  → Copy template, install deps
+↓                   → Project ready
+/agent [role]       → Delegate customization
+/deploy             → Deploy to hosting
 ```
-
-## Subagents
-
-| Task | Agent |
-|------|-------|
-| Design | design.manifest |
-| Architecture | ui-architect.manifest |
-| Animation | animation.manifest |
-| Accessibility | accessibility.manifest |
-| Responsive | responsive.manifest |
-| Frontend | frontend.manifest |
-| Backend | backend.manifest |
-| Performance | performance.manifest |
-| QA | qa.manifest |
-| Deploy | deploy.manifest |
 
 ---
 
-## Result
+## Example
 
-Unique premium websites - NOT generic AI output.
+```
+User: /start
+Agent: Let's start a new project!
+
+Project name: my-saas-landing
+Description: Landing page for SaaS
+Framework: astro
+Purpose: landing page
+
+Available templates:
+- astrowind (marketing)
+- astroship (startup)
+- astro-boilerplate (minimal)
+
+Select: astrowind
+
+✓ Project initialized!
+✓ Saved to .openagent-ux.json
+
+Next: /build astro astrowind
+```
+
+---
+
+## Skills
+
+Located in `.agents/skills/`:
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| start | /start | Project initialization |
+| build | /build | Build with template |
+| deploy | /deploy | Deploy project |
+| agent | /agent | Delegate to agent |
